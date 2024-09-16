@@ -28,10 +28,10 @@ function parseCSV($csvFilePath){
     while (($line = fgetcsv($file)) !== false) {
         $lineNumber++;
         // Check for a valid email in the expected column (index 7 based on your CSV structure)
-        /*if (!filter_var(trim($line[7]), FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var(trim($line[7]), FILTER_VALIDATE_EMAIL)) {
             error_log("Invalid or missing email for row: " . implode(",", $line));
             continue; // Skip rows with invalid or missing emails
-        }*/
+        }
 
         // Handle potential blank values in "Contributed Support" and "Contribution Category"
         if (!empty($line[1])) {
